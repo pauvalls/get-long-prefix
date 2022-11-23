@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "application"
 }
 
 group 'org.example'
@@ -15,6 +16,9 @@ dependencies {
 
 }
 
+application {
+  mainClassName = "GetLongestPrefix"
+}
 test {
     useJUnitPlatform()
 }
