@@ -27,11 +27,7 @@ public final class GetLongestPrefix {
     var prefix = "";
     int i = 0;
 
-    final var minLenghtWord = listOfWords
-        .stream()
-        .min(Comparator.comparingInt(String::length))
-        .get()
-        .length();
+    final var minLenghtWord = listOfWords.stream().min(Comparator.comparingInt(String::length)).get().length();
 
     while (i < minLenghtWord && listOfWords.get(0).charAt(i) == listOfWords.get(listOfWords.size() - 1).charAt(i)) {
       i++;
@@ -40,9 +36,7 @@ public final class GetLongestPrefix {
 
     final String finalPrefix = prefix;
 
-    final var discrepancy = listOfWords
-        .stream()
-        .anyMatch(x -> !x.startsWith(finalPrefix));
+    final var discrepancy = listOfWords.stream().anyMatch(x -> !x.startsWith(finalPrefix));
 
     if (discrepancy) {
       return "";

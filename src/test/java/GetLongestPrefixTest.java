@@ -23,9 +23,7 @@ class GetLongestPrefixTest {
   void should_return_exception_when_input_have_more_than_200_elements() {
     // given
     final var intArray = IntStream.rangeClosed(0, 200).toArray();// From 0 to 100
-    final var listOfWords = Arrays.stream(intArray)
-        .mapToObj(String::valueOf)
-        .collect(Collectors.toList());
+    final var listOfWords = Arrays.stream(intArray).mapToObj(String::valueOf).collect(Collectors.toList());
     // when
     final var exception = assertThrows(Exception.class, () -> GetLongestPrefix.checkContstrains(listOfWords));
     // then
