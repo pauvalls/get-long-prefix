@@ -4,13 +4,6 @@ import java.util.List;
 
 public final class GetLongestPrefix {
 
-  //  Using Java or C#, please write a working solution:
-  //  to find the longest common prefix string amongst an array of strings. If there is no
-  //  common prefix, return an empty string;.
-
-  //1 <= strs.length <= 200
-  //0 <= strs[i].length <= 20
-
   public static void main(final String[] args) throws Exception {
     final List<String> listOfWords = Arrays.asList("flower", "flowerpower", "floght");
     checkContstrains(listOfWords);
