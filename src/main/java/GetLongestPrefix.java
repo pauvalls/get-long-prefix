@@ -25,8 +25,8 @@ public final class GetLongestPrefix {
     if (listOfWords.size() > 200) {
       throw new Exception("Constrains executed: the list can't be more than 200 words");
     }
-    if (listOfWords.stream().allMatch(s -> s.matches("^[a-z]+$"))) {
-      throw new Exception("Constrains executed: the word");
+    if (listOfWords.stream().anyMatch(s -> s.matches("^[a-z]+$"))) {
+      throw new Exception("Constrains executed: the word only can use the english letters");
     }
   }
 

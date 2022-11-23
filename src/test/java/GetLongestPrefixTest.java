@@ -33,6 +33,16 @@ class GetLongestPrefixTest {
   }
 
   @Test
+  void should_return_exception_when_input_have_a_word_with_not_english_letters() {
+    // given
+    final List<String> listOfWords = Arrays.asList("flower", "comeré", "floght");
+    // when
+    final Exception exception = assertThrows(Exception.class, () -> GetLongestPrefix.checkContstrains(listOfWords));
+    // then
+    assertEquals(exception.getMessage(), "the word only can use the english letters");
+  }
+
+  @Test
   void should_return_empty_when_list_does_not_have_any_prefix() {
     // given
     final var listOfWords = Arrays.asList("flower", "ihaveMoreThan21characters", "floght");
@@ -41,6 +51,7 @@ class GetLongestPrefixTest {
     // then
     assertEquals(result, "");
   }
+
   @Test
   void should_return_empty_when_list_has_empty_string() {
     // given
@@ -50,6 +61,7 @@ class GetLongestPrefixTest {
     // then
     assertEquals(result, "");
   }
+
   @Test
   void should_return_flo_when_list_has_a_prefix() {
     // given
@@ -59,6 +71,7 @@ class GetLongestPrefixTest {
     // then
     assertEquals(result, "flo");
   }
+
   @Test
   void should_return_flower_when_list_has_a_word_like_a_prefix() {
     // given
