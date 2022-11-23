@@ -39,7 +39,7 @@ class GetLongestPrefixTest {
     // when
     final Exception exception = assertThrows(Exception.class, () -> GetLongestPrefix.checkContstrains(listOfWords));
     // then
-    assertEquals(exception.getMessage(), "the word only can use the english letters");
+    assertEquals(exception.getMessage(), "Constrains executed: the word only can use the english letters");
   }
 
   @Test
