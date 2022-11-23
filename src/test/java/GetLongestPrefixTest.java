@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class GetLongestPrefixTest {
 
   @Test
-  void should_return_exception_when_input_have_a_word_with_21_characters() {
+  void should_return_exception_when_input_has_a_word_with_21_characters() {
     // given
     final List<String> listOfWords = Arrays.asList("flower", "ihaveMoreThan21characters", "flight");
     // when
@@ -21,7 +21,7 @@ class GetLongestPrefixTest {
   }
 
   @Test
-  void should_return_exception_when_input_have_a_empty_list() {
+  void should_return_exception_when_input_has_an_empty_list() {
     // given
     final List listOfWords = Collections.EMPTY_LIST;
     // when
@@ -31,7 +31,7 @@ class GetLongestPrefixTest {
   }
 
   @Test
-  void should_return_exception_when_input_have_more_than_200_elements() {
+  void should_return_exception_when_input_has_more_than_200_elements() {
     // given
     final var intArray = IntStream.rangeClosed(0, 200).toArray();
     final var listOfWords = Arrays.stream(intArray).mapToObj(String::valueOf).collect(Collectors.toList());
@@ -42,7 +42,7 @@ class GetLongestPrefixTest {
   }
 
   @Test
-  void should_return_exception_when_input_have_a_word_with_not_english_letters() {
+  void should_return_exception_when_input_has_a_word_with_not_english_letters() {
     // given
     final List<String> listOfWords = Arrays.asList("flower", "comeré", "flight");
     // when
@@ -55,7 +55,7 @@ class GetLongestPrefixTest {
   }
 
   @Test
-  void should_return_exception_when_input_have_a_word_with_uppercase_letters() {
+  void should_return_exception_when_input_has_a_word_with_uppercase_letters() {
     // given
     final List<String> listOfWords = Arrays.asList("flower", "FLOWER", "flight");
     // when
@@ -70,7 +70,7 @@ class GetLongestPrefixTest {
   @Test
   void should_return_empty_when_list_does_not_have_any_prefix() {
     // given
-    final var listOfWords = Arrays.asList("flower", "ihaveMoreThan21characters", "flight");
+    final var listOfWords = Arrays.asList("flower", "blablabla", "flight");
     // when
     final var result = GetLongestPrefix.getLongestPrefix(listOfWords);
     // then
@@ -78,7 +78,7 @@ class GetLongestPrefixTest {
   }
 
   @Test
-  void should_return_empty_when_list_has_empty_string() {
+  void should_return_empty_when_list_has_an_empty_string() {
     // given
     final var listOfWords = Arrays.asList("flower", "", "flight");
     // when
@@ -88,7 +88,7 @@ class GetLongestPrefixTest {
   }
 
   @Test
-  void should_return_flo_when_list_has_a_prefix() {
+  void should_return_prefix_when_list_has_one() {
     // given
     final var listOfWords = Arrays.asList("flower", "flowerpower", "flight");
     // when
@@ -98,7 +98,7 @@ class GetLongestPrefixTest {
   }
 
   @Test
-  void should_return_flower_when_list_has_a_word_like_a_prefix() {
+  void should_return_a_word_when_the_list_has_that_word_as_a_prefix() {
     // given
     final var listOfWords = Arrays.asList("flower", "flowerpower", "flowerpowerpower");
     // when
