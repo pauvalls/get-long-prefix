@@ -21,10 +21,10 @@ public final class GetLongestPrefix {
     if (listOfWords.isEmpty()) {
       throw new Exception("Constrains executed: the list can't be  empty");
     }
-    if (listOfWords.stream().anyMatch(s -> s.length() > 20)) {
+    if (listOfWords.stream().anyMatch(s -> s.length() >= 20)) {
       throw new Exception("Constrains executed: the words can't be more than 20 characters");
     }
-    if (listOfWords.size() > 200) {
+    if (listOfWords.size() >= 200) {
       throw new Exception("Constrains executed: the list can't be more than 200 words");
     }
     if (listOfWords.stream().anyMatch(s -> !s.matches("^[a-z]+$"))) {

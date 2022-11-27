@@ -13,7 +13,7 @@ class GetLongestPrefixTest {
   @Test
   void should_return_exception_when_input_has_a_word_with_21_characters() {
     // given
-    final List<String> listOfWords = Arrays.asList("flower", "ihaveMoreThan21characters", "flight");
+    final List<String> listOfWords = Arrays.asList("flower", "ihaveMoreThan21chara", "flight");
     // when
     final Exception exception = assertThrows(Exception.class, () -> GetLongestPrefix.checkContstrains(listOfWords));
     // then
@@ -33,7 +33,7 @@ class GetLongestPrefixTest {
   @Test
   void should_return_exception_when_input_has_more_than_200_elements() {
     // given
-    final var intArray = IntStream.rangeClosed(0, 200).toArray();
+    final var intArray = IntStream.rangeClosed(0, 199).toArray();
     final var listOfWords = Arrays.stream(intArray).mapToObj(String::valueOf).collect(Collectors.toList());
     // when
     final var exception = assertThrows(Exception.class, () -> GetLongestPrefix.checkContstrains(listOfWords));
